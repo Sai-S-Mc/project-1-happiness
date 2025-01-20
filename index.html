@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happiness</title>
+    <style>
+      .content {
+        background: linear-gradient(
+          180.3deg,
+          rgb(214, 224, 255) 37.2%,
+          rgb(254, 168, 168) 137.3%
+        );
+        max-width: 100%;
+        padding: 30px 30px;
+        border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        color: rgb(216, 112, 147);
+        text-align: center;
+      }
+      hr {
+        max-width: 30%;
+      }
+      h2 {
+        color: rgba(132, 31, 95, 0.911);
+        text-align: center;
+        margin: 0 auto;
+        font-weight: lighter;
+      }
+      .standout {
+        color: #b963e5;
+      }
+      img {
+        display: block;
+        margin: 2.9% auto 0 auto;
+        border-radius: 13px;
+        box-shadow: 5px 5px 20px rgba(93, 24, 24, 0.547);
+        max-width: 30%;
+      }
+      .description {
+        text-align: center;
+        line-height: 29px;
+        max-width: 600px;
+        margin: 2.9% auto 0 auto;
+        font-size: large;
+      }
+      .learn-more {
+        display: block;
+        text-align: center;
+        color: brown;
+        text-decoration: none;
+        font-size: medium;
+      }
+      .learn-more:hover {
+        text-decoration: underline;
+      }
+      button {
+        display: block;
+        padding: 20px 30px;
+        background-color: #c54c82;
+        color: white;
+        border-radius: 10px;
+        font-size: large;
+        margin: 35px auto 0 auto;
+        box-shadow: 5px 5px 15px #808182d4;
+        transition: all 250ms ease-in-out;
+        border: #c54c82;
+      }
+      button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      .footer {
+        text-align: center;
+        font-size: medium;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>A Happy Human</h1>
+      <hr />
+      <h2>
+        <em
+          >The <span class="standout">science</span> behind
+          <span class="standout">happiness</span>
+        </em>
+      </h2>
+      <br />
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/078/354/original/Key-to-Happiness.jpg?1682185117"
+        alt="A key to long-term happiness"
+      />
+      <p class="description">
+        Happiness, in the context of mental or emotional states, is positive or
+        pleasant emotions ranging from contentment to intense joy. Other forms
+        include life satisfaction, well-being, subjective well-being,
+        flourishing and eudaimonia. Since the 1960s, happiness research has been
+        conducted in a wide variety of scientific disciplines, including
+        gerontology, social psychology and positive psychology, clinical and
+        medical research and happiness economics.
+      </p>
+      <br />
+      <a
+        class="learn-more"
+        href="https://en.wikipedia.org/wiki/Happiness"
+        title="Happiness on wikipedia"
+        target="_blank"
+      >
+        <strong>Learn more on wikipedia</strong>
+      </a>
+      <button>📖A guide on how to become happier</button>
+      <p class="footer">This page was built by a fellow Happy Human😊</p>
+    </div>
+    <script>
+      let name = prompt("What is your name?");
+      if (name === "") {
+        name = "Mysterious person😏";
+      }
+      let time = prompt("What hour is it (in 24 hour format)?");
+      time = time.toLowerCase().trim();
+      if (time >= 5 && time < 12) {
+        alert("Good morning, " + name + "! 🌅");
+      } else if (time >= 12 && time < 17) {
+        alert("Good afternoon, " + name + "! 🌞");
+      } else if (time >= 17 && time < 21) {
+        alert("Good evening, " + name + "! 🌤️");
+      } else if (time >= 21 && time < 5) {
+        alert("Good night, " + name + "! 🌛");
+      } else {
+        alert("Hi there, " + name + "! 👋🏽");
+      }
+      function guide() {
+        let email = prompt("What is your email?");
+        let emoji = prompt("Drop your favorite emoji below!");
+        if (emoji === "") {
+          emoji = "💝";
+        }
+        if (email === "") {
+          alert(
+            "Thank you for checking out our website today, " +
+              name +
+              " ! We do need your email to send over the Happiness Guide " +
+              emoji
+          );
+        } else {
+
+          alert(
+            "Thank you " +
+              name +
+              "! Your Happiness Guide is on it's way to your inbox " +
+              emoji
+          );
+        }
+      }
+      let clickButton = document.querySelector("button");
+      clickButton.addEventListener("click", guide);
+    </script>
+  </body>
+</html>

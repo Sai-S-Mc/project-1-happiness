@@ -78,7 +78,7 @@
         font-size: medium;
       }
       .footer a {
-        color:#c54c82;
+        color: #c54c82;
         transition: all 250ms ease-in-out;
         text-decoration: none;
       }
@@ -123,15 +123,24 @@
       </a>
       <button>📖A guide on how to become happier</button>
       <br />
-      <p class="footer">This page was built by a fellow <a href="https://github.com/Sai-S-Mc">Happy Human</a>😊, is opensourced on <a href="https://github.com/Sai-S-Mc/project-1-happiness">GitHub</a> and is hosted on <a href="https://project-1-happiness-by-sai.netlify.app/">Netlify</a></p>
+      <p class="footer">
+        This page was built by a fellow
+        <a href="https://github.com/Sai-S-Mc">Happy Human</a>😊, is open-sourced
+        on
+        <a href="https://github.com/Sai-S-Mc/project-1-happiness">GitHub</a> and
+        is hosted on
+        <a href="https://project-1-happiness-by-sai.netlify.app/">Netlify</a>
+      </p>
     </div>
     <script>
       let name = prompt("What is your name?");
-      if (name === "") {
+      if (name === "" || name === null) {
         name = "Mysterious person😏";
       }
       let time = prompt("What hour is it (in 24 hour format)?");
-      time = time.toLowerCase().trim();
+      if (time !== null) {
+        time = time.trim();
+      }
       if (time >= 5 && time < 12) {
         alert("Good morning, " + name + "! 🌅");
       } else if (time >= 12 && time < 17) {
@@ -146,10 +155,10 @@
       function guide() {
         let email = prompt("What is your email?");
         let emoji = prompt("Drop your favorite emoji below!");
-        if (emoji === "") {
+        if (emoji === "" || emoji === null) {
           emoji = "💝";
         }
-        if (email === "") {
+        if (email === "" || email === null) {
           alert(
             "Thank you for checking out our website today, " +
               name +
@@ -157,7 +166,6 @@
               emoji
           );
         } else {
-
           alert(
             "Thank you " +
               name +

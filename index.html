@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happiness - Sai Satti</title>
     <style>
-      .content {
+      body {
+        margin: 0;
         background: linear-gradient(
           180.3deg,
           rgb(214, 224, 255) 37.2%,
           rgb(254, 168, 168) 137.3%
         );
-        max-width: 100%;
+      }
+      .content {
+        max-width: 600px;
+        background: rgb(255 255 255 / 0.18);
+        box-shadow: 5px 5px 5px rgba(165, 165, 165, 0.412);
+        margin: 60px auto;
+        border-radius: 10px;
         padding: 30px 30px;
-        border-radius: 20px;
         font-family: Arial, Helvetica, sans-serif;
       }
       h1 {
         color: rgb(216, 112, 147);
         text-align: center;
+        margin-top: 0;
       }
       hr {
         max-width: 30%;
@@ -35,10 +42,10 @@
       }
       img {
         display: block;
-        margin: 2.9% auto 0 auto;
+        margin: 5px auto 0 auto;
+        width: 80%;
         border-radius: 13px;
         box-shadow: 5px 5px 20px rgba(93, 24, 24, 0.547);
-        max-width: 30%;
       }
       .description {
         text-align: center;
@@ -74,6 +81,7 @@
         cursor: pointer;
       }
       .footer {
+        margin-bottom: 0;
         text-align: center;
         font-size: medium;
       }
@@ -125,33 +133,34 @@
       <br />
       <p class="footer">
         This page was built by a fellow
-        <a href="https://github.com/Sai-S-Mc" target="_blank">Happy Human</a>😊, is open-sourced
-        on
-        <a href="https://github.com/Sai-S-Mc/project-1-happiness" target="_blank">GitHub</a> and
-        is hosted on
-        <a href="https://project-1-happiness.netlify.app/" target="_blank">Netlify</a>
+        <a
+          href="https://github.com/Sai-S-Mc"
+          target="_blank"
+          title="Sai's GitHub Profile"
+          >Sai Satti</a
+        >😊, is open-sourced on
+        <a
+          href="https://github.com/Sai-S-Mc/project-1-happiness"
+          target="_blank"
+          title="Sai's GitHub repository"
+          >GitHub</a
+        >
+        and is hosted on
+        <a
+          href="https://project-1-happiness.netlify.app/"
+          target="_blank"
+          title="Sai's project on Netlify"
+          >Netlify</a
+        >
       </p>
     </div>
     <script>
-      let name = prompt("What is your name?");
-      if (name === "" || name === null) {
-        name = "Mysterious person😏";
+      function updateName(userName) {
+        userName =
+          userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+        return userName;
       }
-      let time = prompt("What hour is it (in 24 hour format)?");
-      if (time !== null) {
-        time = time.trim();
-      }
-      if (time >= 5 && time < 12) {
-        alert("Good morning, " + name + "! 🌅");
-      } else if (time >= 12 && time < 17) {
-        alert("Good afternoon, " + name + "! 🌞");
-      } else if (time >= 17 && time < 21) {
-        alert("Good evening, " + name + "! 🌤️");
-      } else if (time >= 21 && time < 5) {
-        alert("Good night, " + name + "! 🌛");
-      } else {
-        alert("Hi there, " + name + "! 👋🏽");
-      }
+
       function guide() {
         let email = prompt("What is your email?");
         let emoji = prompt("Drop your favorite emoji below!");
@@ -173,6 +182,27 @@
               emoji
           );
         }
+      }
+
+      let name = prompt("What is your name?").trim();
+      name = updateName(name);
+      if (name === "" || name === null) {
+        name = "Mysterious person😏";
+      }
+      let time = prompt("What hour is it (in 24 hour format)?");
+      if (time !== null) {
+        time = time.trim();
+      }
+      if (time >= 5 && time < 12) {
+        alert("Good morning, " + name + "! 🌅");
+      } else if (time >= 12 && time < 17) {
+        alert("Good afternoon, " + name + "! 🌞");
+      } else if (time >= 17 && time < 21) {
+        alert("Good evening, " + name + "! 🌤️");
+      } else if (time >= 21 && time < 5) {
+        alert("Good night, " + name + "! 🌛");
+      } else {
+        alert("Hi there, " + name + "! 👋🏽");
       }
       let clickButton = document.querySelector("button");
       clickButton.addEventListener("click", guide);

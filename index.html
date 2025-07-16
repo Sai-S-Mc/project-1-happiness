@@ -155,13 +155,41 @@
       </p>
     </div>
     <script>
-      function updateName(userName) {
-        userName =
-          userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+      function handleTime(userTime, userName) {
+        if (userTime !== null && userTime !== "") {
+          if (userTime >= 5 && userTime < 12) {
+            alert("Good morning, " + userName + "!🌅");
+          } else if (userTime >= 12 && userTime < 17) {
+            alert("Good afternoon, " + userName + "!🌞");
+          } else if (userTime >= 17 && userTime < 21) {
+            alert("Good evening, " + userName + "!🌤️");
+          } else {
+            alert("Good night, " + userName + "!🌛");
+          }
+        } else {
+          alert("Hi there, " + userName + "!👋🏽");
+        }
+      }
+
+      function handleName(userName) {
+        if (userName === "" || userName === null) {
+          userName = "Mysterious person😏";
+        } else {
+          userName =
+            userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+        }
         return userName;
       }
 
-      function guide() {
+      function askUser() {
+        let name = prompt("What is your name?").trim();
+        name = handleName(name);
+
+        let time = prompt("What hour is it (in 24 hour format)?").trim();
+        handleTime(time, name);
+      }
+
+      function handleClick() {
         let email = prompt("What is your email?");
         let emoji = prompt("Drop your favorite emoji below!");
         if (emoji === "" || emoji === null) {
@@ -184,28 +212,10 @@
         }
       }
 
-      let name = prompt("What is your name?").trim();
-      name = updateName(name);
-      if (name === "" || name === null) {
-        name = "Mysterious person😏";
-      }
-      let time = prompt("What hour is it (in 24 hour format)?");
-      if (time !== null) {
-        time = time.trim();
-      }
-      if (time >= 5 && time < 12) {
-        alert("Good morning, " + name + "! 🌅");
-      } else if (time >= 12 && time < 17) {
-        alert("Good afternoon, " + name + "! 🌞");
-      } else if (time >= 17 && time < 21) {
-        alert("Good evening, " + name + "! 🌤️");
-      } else if (time >= 21 && time < 5) {
-        alert("Good night, " + name + "! 🌛");
-      } else {
-        alert("Hi there, " + name + "! 👋🏽");
-      }
+      askUser();
+
       let clickButton = document.querySelector("button");
-      clickButton.addEventListener("click", guide);
+      clickButton.addEventListener("click", handleClick);
     </script>
   </body>
 </html>

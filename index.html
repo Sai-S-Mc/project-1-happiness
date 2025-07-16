@@ -13,19 +13,25 @@
           rgb(214, 224, 255) 37.2%,
           rgb(254, 168, 168) 137.3%
         );
-      }
-      .content {
-        max-width: 600px;
-        background: rgb(255 255 255 / 0.18);
-        box-shadow: 5px 5px 5px rgba(165, 165, 165, 0.412);
-        margin: 60px auto;
-        border-radius: 10px;
-        padding: 30px 30px;
         font-family: Arial, Helvetica, sans-serif;
       }
+      .content {
+        margin: 60px auto;
+        padding: 30px;
+        max-width: 600px;
+        background: rgb(255 255 255 / 0.18);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(165, 165, 165, 0.412);
+      }
+      h1,
+      h2,
+      p,
+      a {
+        text-align: center;
+      }
+
       h1 {
         color: rgb(216, 112, 147);
-        text-align: center;
         margin-top: 0;
       }
       hr {
@@ -33,9 +39,8 @@
       }
       h2 {
         color: rgba(132, 31, 95, 0.911);
-        text-align: center;
-        margin: 0 auto;
         font-weight: lighter;
+        margin-bottom: 0;
       }
       .standout {
         color: #b963e5;
@@ -44,24 +49,22 @@
         display: block;
         margin: 5px auto 0 auto;
         width: 80%;
-        border-radius: 13px;
+        border-radius: 10px;
         box-shadow: 5px 5px 20px rgba(93, 24, 24, 0.547);
       }
       .description {
-        text-align: center;
         line-height: 29px;
         max-width: 600px;
         margin: 2.9% auto 0 auto;
         font-size: large;
       }
-      .learn-more {
+      a.learn-more {
         display: block;
-        text-align: center;
         color: brown;
         text-decoration: none;
         font-size: medium;
       }
-      .learn-more:hover {
+      a.learn-more:hover {
         text-decoration: underline;
       }
       button {
@@ -82,8 +85,6 @@
       }
       .footer {
         margin-bottom: 0;
-        text-align: center;
-        font-size: medium;
       }
       .footer a {
         color: #c54c82;
@@ -212,7 +213,7 @@
         }
       }
 
-      askUser();
+      <!-- askUser(); -->
 
       let clickButton = document.querySelector("button");
       clickButton.addEventListener("click", handleClick);

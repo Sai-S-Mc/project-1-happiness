@@ -182,12 +182,16 @@
         return userName;
       }
 
-      function askUser() {
+      function askUserName() {
         let name = prompt("What is your name?").trim();
-        name = handleName(name);
+        updatedName = handleName(name);
+        return updatedName;
+      }
 
+      function askUserTime() {
         let time = prompt("What hour is it (in 24 hour format)?").trim();
-        handleTime(time, name);
+        updatedTime = handleTime(time, name);
+        return updatedTime;
       }
 
       function handleClick() {
@@ -207,16 +211,17 @@
           alert(
             "Thank you " +
               name +
-              "! Your Happiness Guide is on it's way to your inbox " +
+              "! Your Happiness Guide is on its way to your inbox " +
               emoji
           );
         }
       }
 
-      <!-- askUser(); -->
+      let name = askUserName();
+      let time = askUserTime(name);
 
-      let clickButton = document.querySelector("button");
-      clickButton.addEventListener("click", handleClick);
+      let buttonElement = document.querySelector("button");
+      buttonElement.addEventListener("click", handleClick);
     </script>
   </body>
 </html>

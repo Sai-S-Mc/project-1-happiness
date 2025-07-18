@@ -157,16 +157,16 @@
     </div>
     <script>
       function handleTime(userTime, userName) {
-        if (userTime !== null && userTime !== "") {
-          if (userTime >= 5 && userTime < 12) {
-            alert("Good morning, " + userName + "!🌅");
-          } else if (userTime >= 12 && userTime < 17) {
-            alert("Good afternoon, " + userName + "!🌞");
-          } else if (userTime >= 17 && userTime < 21) {
-            alert("Good evening, " + userName + "!🌤️");
-          } else {
+        if (userTime>0){
+          if (userTime < 5 || userTime >= 21){
             alert("Good night, " + userName + "!🌛");
-          }
+          } else if (userTime < 12){
+            alert("Good morning, " + userName + "!🌅");
+          } else if (userTime < 17){
+            alert("Good afternoon, " + userName + "!🌞");
+          } else{
+            alert("Good evening, " + userName + "!🌤️");
+          }        
         } else {
           alert("Hi there, " + userName + "!👋🏽");
         }
@@ -218,7 +218,7 @@
       }
 
       let name = askUserName();
-      let time = askUserTime(name);
+      askUserTime(name);
 
       let buttonElement = document.querySelector("button");
       buttonElement.addEventListener("click", handleClick);

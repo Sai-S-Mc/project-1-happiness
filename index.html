@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happiness - Sai Satti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
@@ -13,7 +19,7 @@
           rgb(214, 224, 255) 37.2%,
           rgb(254, 168, 168) 137.3%
         );
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Roboto", sans-serif;
       }
       .content {
         margin: 60px auto;
@@ -23,6 +29,12 @@
         border-radius: 10px;
         box-shadow: 5px 5px 5px rgba(165, 165, 165, 0.412);
       }
+
+      h1,
+      h2 {
+        font-family: "Playfair Display", serif;
+      }
+
       h1,
       h2,
       p,
@@ -157,16 +169,16 @@
     </div>
     <script>
       function handleTime(userTime, userName) {
-        if (userTime>0){
-          if (userTime < 5 || userTime >= 21){
+        if (userTime > 0) {
+          if (userTime < 5 || userTime >= 21) {
             alert("Good night, " + userName + "!🌛");
-          } else if (userTime < 12){
+          } else if (userTime < 12) {
             alert("Good morning, " + userName + "!🌅");
-          } else if (userTime < 17){
+          } else if (userTime < 17) {
             alert("Good afternoon, " + userName + "!🌞");
-          } else{
+          } else {
             alert("Good evening, " + userName + "!🌤️");
-          }        
+          }
         } else {
           alert("Hi there, " + userName + "!👋🏽");
         }

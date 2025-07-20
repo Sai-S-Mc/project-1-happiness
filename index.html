@@ -176,9 +176,9 @@
         title="What Does Happiness Really Mean? - Kendra Cherry"
         target="_blank"
       >
-        <strong>✨Read an article on Happiness✨</strong>
+        <strong>✨Read an article on happiness✨</strong>
       </a>
-      <button>📖 A guide on how to become happier</button>
+      <button>I want to learn more about happiness</button>
       <br />
       <p class="footer">
         This project was coded by
@@ -208,21 +208,21 @@
       function handleTime(userTime, userName) {
         if (userTime > 0) {
           if (userTime < 5 || userTime >= 21) {
-            alert("Good night, " + userName + "!🌛");
+            alert(`Good night🌛, ${userName}!`);
           } else if (userTime < 12) {
-            alert("Good morning, " + userName + "!🌅");
+            alert(`Good morning🌅, ${userName}!`);
           } else if (userTime < 17) {
-            alert("Good afternoon, " + userName + "!🌞");
+            alert(`Good afternoon🌞, ${userName}!`);
           } else {
-            alert("Good evening, " + userName + "!🌤️");
+            alert(`Good evening⛅, ${userName}!`);
           }
         } else {
-          alert("Hi there, " + userName + "!👋🏽");
+          alert(`Hi there👋🏽, ${userName}!`);
         }
       }
 
       function handleName(userName) {
-        if (userName === "" || userName === null) {
+        if (!userName) {
           userName = "Mysterious person😏";
         } else {
           userName =
@@ -244,24 +244,22 @@
       }
 
       function handleClick() {
-        let email = prompt("What is your email?");
-        let emoji = prompt("Drop your favorite emoji below!");
-        if (emoji === "" || emoji === null) {
+        let wantsGuide = prompt(
+          "Would you like a guide on happiness?(answer: yes or no)"
+        )
+          .trim()
+          .toLowerCase();
+        let emoji = prompt("Drop your favorite emoji below!").trim();
+        if (!emoji) {
           emoji = "💝";
         }
-        if (email === "" || email === null) {
+        if (wantsGuide === "yes") {
           alert(
-            "Thank you for checking out our website today, " +
-              name +
-              " ! We do need your email to send over the Happiness Guide " +
-              emoji
+            `Thank you, ${name}! Your happiness guide is on its way. ${emoji}`
           );
         } else {
           alert(
-            "Thank you " +
-              name +
-              "! Your Happiness Guide is on its way to your inbox " +
-              emoji
+            `No problem, ${name}. Thank you for checking out our website. Have a good one! ${emoji}`
           );
         }
       }

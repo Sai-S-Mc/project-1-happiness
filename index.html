@@ -206,6 +206,9 @@
     </div>
     <script>
       function handleTime(userTime, userName) {
+        if (userTime !== null) {
+          userTime = userTime.trim();
+        }
         if (userTime > 0) {
           if (userTime < 5 || userTime >= 21) {
             alert(`Good night🌛, ${userName}!`);
@@ -222,6 +225,9 @@
       }
 
       function handleName(userName) {
+        if (userName !== null) {
+          userName = userName.trim();
+        }
         if (!userName) {
           userName = "Mysterious person😏";
         } else {
@@ -232,13 +238,13 @@
       }
 
       function askUserName() {
-        let name = prompt("What is your name?").trim();
+        let name = prompt("What is your name?");
         updatedName = handleName(name);
         return updatedName;
       }
 
-      function askUserTime() {
-        let time = prompt("What hour is it (in 24 hour format)?").trim();
+      function askUserTime(name) {
+        let time = prompt("What hour is it (in 24 hour format)?");
         updatedTime = handleTime(time, name);
         return updatedTime;
       }
@@ -246,10 +252,15 @@
       function handleClick() {
         let wantsGuide = prompt(
           "Would you like a guide on happiness? (answer: yes or no)"
-        )
-          .trim()
-          .toLowerCase();
-        let emoji = prompt("Drop your favorite emoji below!").trim();
+        );
+        if (wantsGuide !== null) {
+          wantsGuide.trim().toLowerCase();
+        }
+
+        let emoji = prompt("Drop your favorite emoji below!");
+        if (emoji !== null) {
+          emoji = emoji.trim();
+        }
         if (!emoji) {
           emoji = "💝";
         }
